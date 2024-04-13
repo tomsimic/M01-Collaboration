@@ -9,6 +9,11 @@ This program is to be used for M04 Lab - Case Study: Python APIs
 # create constants
 # configure connection to database
 # create books class
+# create functions:
+#   get_books
+#   get_book
+#   add_book
+#   delete_book
 
 
 # Importing needed modules:
@@ -36,11 +41,15 @@ class Book(db.Model):
     def __repr__(self):
         return f"{self.book_name} by {self.author} published by {self.publisher}"
 
+# Setting default page retrival:
+
 
 @APP.route('/')
 def index():
     """Pulls index.html"""
     return 'Hello! Welcome to Readables: The Webliary'
+
+# Creating function for default data to be submitted to libarary
 
 
 @APP.route('/books')
@@ -54,12 +63,16 @@ def get_books():
         output.append(book_data)
     return {'Books on hand': output}
 
+# Creating function for book retrival
+
 
 @APP.route('/books/<id>')
 def get_book(id):
     """Replies to book reqests"""
     book = Book.query.get_or_404(id)
     return {"Book title": book.book_name, "Author": book.author, "Published by:": book.publisher}
+
+# Creating function to add books through web interface:
 
 
 @APP.route('/books', methods=['POST'])
@@ -71,6 +84,8 @@ def add_book():
     db.session.add(book)
     db.session.commit()
     return {'id': book.id}
+
+# Creating function to remove books:
 
 
 @APP.route('/books/<id>', methods=['DELETE'])
