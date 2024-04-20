@@ -1,0 +1,115 @@
+# test outputs from VSCode output console:
+[Running] C:\Users\totalyscrewedup\AppData\Local\Programs\Python\Python312\python -u "c:\Users\totalyscrewedup\Documents\IvyTech_software_development\InProgress\SDEV220\testing\initialpractice.py"
+Traceback (most recent call last):
+  File "c:\Users\totalyscrewedup\Documents\IvyTech_software_development\InProgress\SDEV220\testing\initialpractice.py", line 11, in <module>
+    assert sum([1, 1, 1]) == 6, "Should be 6"
+AssertionError: Should be 6
+
+[Done] exited with code=1 in 0.136 seconds
+
+[Running] C:\Users\totalyscrewedup\AppData\Local\Programs\Python\Python312\python -u "c:\Users\totalyscrewedup\Documents\IvyTech_software_development\InProgress\SDEV220\testing\VSCode_testing\test_sum.py"
+Everything passed
+
+[Done] exited with code=0 in 0.126 seconds
+
+[Running] C:\Users\totalyscrewedup\AppData\Local\Programs\Python\Python312\python -u "c:\Users\totalyscrewedup\Documents\IvyTech_software_development\InProgress\SDEV220\testing\VSCode_testing\test_sum_2.py"
+Traceback (most recent call last):
+  File "c:\Users\totalyscrewedup\Documents\IvyTech_software_development\InProgress\SDEV220\testing\VSCode_testing\test_sum_2.py", line 19, in <module>
+    test_sum_tuple()
+  File "c:\Users\totalyscrewedup\Documents\IvyTech_software_development\InProgress\SDEV220\testing\VSCode_testing\test_sum_2.py", line 14, in test_sum_tuple
+    assert sum((1, 2, 2)) == 6, "Should be 6"
+AssertionError: Should be 6
+
+[Done] exited with code=1 in 0.23 seconds
+
+[Running] C:\Users\totalyscrewedup\AppData\Local\Programs\Python\Python312\python -u "c:\Users\totalyscrewedup\Documents\IvyTech_software_development\InProgress\SDEV220\testing\VSCode_testing\test_sum_unittest.py"
+.F
+======================================================================
+FAIL: test_sum_tuple (__main__.TestSum.test_sum_tuple)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\Users\totalyscrewedup\Documents\IvyTech_software_development\InProgress\SDEV220\testing\VSCode_testing\test_sum_unittest.py", line 16, in test_sum_tuple
+    self.assertEqual(sum((1, 2, 2)), 6, "Should be 6")
+AssertionError: 5 != 6 : Should be 6
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (failures=1)
+
+[Done] exited with code=1 in 0.302 seconds
+
+# test done from terminal:
+PS C:\Users\totalyscrewedup\Documents\IvyTech_software_development\InProgress\SDEV220\testing\VSCode_testing> python -m nose2
+..F.F
+======================================================================
+FAIL: test_sum_2.test_sum_tuple
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\totalyscrewedup\Documents\IvyTech_software_development\InProgress\SDEV220\testing\VSCode_testing\test_sum_2.py", line 14, in test_sum_tuple
+    assert sum((1, 2, 2)) == 6, "Should be 6"
+AssertionError: Should be 6
+
+======================================================================
+FAIL: test_sum_tuple (test_sum_unittest.TestSum.test_sum_tuple)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\totalyscrewedup\Documents\IvyTech_software_development\InProgress\SDEV220\testing\VSCode_testing\test_sum_unittest.py", line 16, in test_sum_tuple
+    self.assertEqual(sum((1, 2, 2)), 6, "Should be 6")
+AssertionError: 5 != 6 : Should be 6
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.002s
+
+FAILED (failures=2)
+PS C:\Users\totalyscrewedup\Documents\IvyTech_software_development\InProgress\SDEV220\testing\VSCode_testing>
+
+# Executing Test Runners:
+# Executed using the VS Code keyboard shortcut:
+[Running] C:\Users\totalyscrewedup\AppData\Local\Programs\Python\Python312\python -u "c:\Users\totalyscrewedup\Documents\IvyTech_software_development\InProgress\SDEV220\testing\VSCode_testing\project\test.py"
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+
+[Done] exited with code=0 in 0.267 seconds
+
+# Executing python -m unittest .\test.py command from terminal:
+PS C:\Users\totalyscrewedup\Documents\IvyTech_software_development\InProgress\SDEV220\testing\VSCode_testing\project> python 
+-m unittest .\test.py
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+
+# Executing using verbose output:
+PS C:\Users\totalyscrewedup\Documents\IvyTech_software_development\InProgress\SDEV220\testing\VSCode_testing\project> python 
+-m unittest -v .\test.py
+test_list_int (test.TestSum.test_list_int)
+Test that it can sum a list of integers ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+OK
+
+# Executing auto-discovery:
+PS C:\Users\totalyscrewedup\Documents\IvyTech_software_development\InProgress\SDEV220\testing\VSCode_testing\project> python 
+-m unittest discover  
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+
+# created 'tests' folder and moved the test.py file into it to run the discover with s flag:
+PS C:\Users\totalyscrewedup\Documents\IvyTech_software_development\InProgress\SDEV220\testing\VSCode_testing\project> python 
+-m unittest discover -s tests
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+
