@@ -1,0 +1,10 @@
+I've created this text file since there was no textbox submission.
+Here is the link to the GitHub repo:
+https://github.com/tomsimic/my-first-blog/tree/master/blog
+
+Here is the link to the site that I've created:
+https://tomsimic.pythonanywhere.com/
+
+I didn't want to use CSS classes and didn't have a need to use identifiers, since both are overdone in general. 
+"Best part is no part. Best step is no step." ~ Elon Musk
+I cannot think of a better way to show lean design, web design, and Django framework comrehansion than this approach.
