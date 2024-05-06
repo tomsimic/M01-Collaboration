@@ -3,7 +3,7 @@
 }
 
 body {
-    background-image: linear-gradient(to bottom, #963505 5%, #d36d13 45%, #cf7316 100%);
+    background-image: linear-gradient(to right, #963505 5%, #d36d13 45%, #cf7316 100%);
     color: #ccc;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
@@ -11,11 +11,11 @@ body {
 }
 
 body a {
-    color: #458466;
+    color: #963505;
 }
 
 h2 a:visited {
-    color: #cf7316;
+    color: #963505;
 }
 
 h2 a:link {
@@ -28,7 +28,7 @@ a {
 
 header {
     background-color: #cf7316;
-    color: #458466;
+    color: #d36d13;
     font-family: Georgia, Sans-Serif;
     padding: 1em;
 }
@@ -45,7 +45,7 @@ main {
 }
 
 h2 {
-    color: #cf7316;
+    color: #963505;
     font-family: Georgia, serif;
     text-align: center;
 }
@@ -87,19 +87,44 @@ footer {
     padding: 1em;
 }
 
+.actions {
+    float: right;
+}
+
+.btn-secondary,
+.btn-secondary:visited {
+    color: #458466;
+    background: none;
+    border-color: #C25100;
+}
+
+.btn-secondary:hover {
+    color: #FFFFFF;
+    background-color: #1848cf;
+}
+
+.comment {
+    margin: 20px 0px 20px 20px;
+}
+
+.top-menu,
+.top-menu:hover,
+.top-menu:visited {
+    color: #1848cf;
+    float: right;
+    font-size: 15pt;
+    margin-right: 20px;
+}
+
 #mobile {
-    display: inline;
+    display: block;
 }
 
 #desktop {
     display: none;
 }
 
-h2 {
-    float: left;
-}
-
-@media (min-width: 380px) {
+@media (min-width: 600px) {
     #mobile {
         display: none;
     }

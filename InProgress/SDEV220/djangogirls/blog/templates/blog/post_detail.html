@@ -2,12 +2,43 @@
 
 {% block content %}
     <article class="post">
+        <aside class="actions">
+            <a class="btn btn-secondary" href="{% url 'post_edit' pk=post.pk %}" title='Edit'>
+              {% include './icons/pencil-fill.svg' %}
+            </a>
+            <a class="btn btn-secondary" href="{% url 'post_remove' pk=post.pk %}" title="Delete">{% include './icons/hammer.svg' %}</a>
+        </aside>
         {% if post.published_date %}
             <time class="date">
                 {{ post.published_date }}
             </time>
+        {% else %}
+            <a class="save btn btn-secondary" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
         {% endif %}
         <h2>{{ post.title }}</h2>
         <p>{{ post.text|linebreaksbr }}</p>
     </article>
+    <hr>
+    <a class="save btn btn-secondary" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+    {% for comment in post.comments.all %}
+    {% if user.is_authenticated or comment.approved_comment %}
+    <div class="comment">
+        <div class="date">
+            {{ comment.created_date }}
+            {% if not comment.approved_comment %}
+                <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}">
+                   {% include './icons/hand-thumbs-down.svg' %}
+                </a>
+                <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}">
+                   {% include './icons/hand-thumbs-up.svg' %}
+                </a>
+            {% endif %}
+        </div>
+        <strong>{{ comment.author }}</strong>
+        <p>{{ comment.text|linebreaks }}</p>
+    </div>
+    {% endif %}
+{% empty %}
+    <p>No comments here yet :(</p>
+{% endfor %}
 {% endblock %}
